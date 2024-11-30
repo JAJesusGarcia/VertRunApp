@@ -1,7 +1,8 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import * as Linking from 'expo-linking';
 import { NavigationContainer } from '@react-navigation/native';
+import Activities from 'screens/Activities';
+import MonthlyStats from 'screens/MonthlyStats';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const linking = {
   prefixes: [Linking.createURL('/')],
@@ -13,28 +14,15 @@ const linking = {
   },
 };
 
+const Stack = createStackNavigator();
+
 export default function App() {
   return (
-    <NavigationContainer linking={linking} children={undefined}>
-      {/* Aquí añadiremos las pantallas más adelante */}
+    <NavigationContainer linking={linking}>
+      <Stack.Navigator>
+        <Stack.Screen name="Activities" component={Activities} />
+        <Stack.Screen name="MonthlyStats" component={MonthlyStats} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>Open up App.tsx to start working on your app!</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
