@@ -1,5 +1,6 @@
 {
   "expo": {
+    "scheme": "vertrunapp",
     "name": "VertRunApp",
     "slug": "VertRunApp",
     "version": "1.0.0",
