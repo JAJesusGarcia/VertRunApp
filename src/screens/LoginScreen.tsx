@@ -5,7 +5,7 @@ import { STRAVA_CLIENT_ID, STRAVA_REDIRECT_URI } from '@env';
 
 const LoginScreen = () => {
   const handleLogin = () => {
-    const authUrl = `https://www.strava.com/oauth/authorize?client_id=${STRAVA_CLIENT_ID}&response_type=code&redirect_uri=${STRAVA_REDIRECT_URI}&approval_prompt=auto&scope=read,activity:read_all`;
+    const authUrl = `https://www.strava.com/oauth/authorize?client_id=141474&response_type=code&redirect_uri=vertrunapp://redirect&approval_prompt=auto&scope=read,activity:read_all`;
     Linking.openURL(authUrl);
   };
 
